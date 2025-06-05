@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      flex-direction: column;
+    }
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    p {
+      margin-top: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader"></div>
+  <p>Redirecting to http://www.gov.paso.gr/user?=234334...</p>
+
+  <script>
+    // Simulate fake redirect (never leaves)
+    setTimeout(() => {
+      history.pushState(null, '', 'http://www.gov.paso.gr/user?=234334');
+    }, 1000);
+  </script>
+</body>
+</html>
